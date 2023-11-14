@@ -62,7 +62,6 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             child: Container(
-              color: Theme.of(context).colorScheme.primaryContainer,
               child: mainContainer,
             ),
           ),

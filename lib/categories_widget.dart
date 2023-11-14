@@ -24,6 +24,7 @@ class CategoriesWidget extends StatelessWidget {
               Radius.circular(15.0),
             ),
             color: color,
+            shape: BoxShape.rectangle,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -38,27 +39,50 @@ class CategoriesWidget extends StatelessWidget {
       );
     }
 
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: Theme.of(context).primaryColor,
-            width: 2.5,
+    return Stack(
+      children: <Widget>[
+        Container(
+          margin: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).colorScheme.tertiary,
+              width: 2.5,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+            shape: BoxShape.rectangle,
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(15.0),
-          )),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Center(
-          child: Wrap(
-            direction: Axis.horizontal,
-            alignment: WrapAlignment.start,
-            spacing: 10,
-            runSpacing: 10,
-            children: grid,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 25, 10, 25),
+            child: Center(
+              child: Wrap(
+                direction: Axis.horizontal,
+                alignment: WrapAlignment.start,
+                spacing: 10,
+                runSpacing: 10,
+                children: grid,
+              ),
+            ),
           ),
         ),
-      ),
+        Positioned(
+          left: 40,
+          top: 6,
+          child: Container(
+            padding: const EdgeInsets.only(
+              bottom: 0,
+              left: 10,
+              right: 10,
+            ),
+            color: Theme.of(context).colorScheme.surfaceVariant,
+            child: Text(
+              'Categories',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

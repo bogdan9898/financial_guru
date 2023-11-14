@@ -8,12 +8,11 @@ class GeneralElementsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(28.0),
-      child: Center(
-        child: ListView(
-          children: <Widget>[CategoriesWidget()],
-        ),
+    return Center(
+      child: ListView(
+        children: <Widget>[
+          CategoriesWidget(),
+        ],
       ),
     );
   }
