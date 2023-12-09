@@ -1,4 +1,4 @@
-import 'package:financial_guru/general_elements_widget.dart';
+import 'package:financial_guru/filters_widget.dart';
 import 'package:financial_guru/overview_widget.dart';
 import 'package:financial_guru/transactions_widget.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         currentView = OverviewWidget();
         break;
       case 1:
-        currentView = GeneralElementsWidget();
+        currentView = FiltersWidget();
         break;
       case 2:
         currentView = TransactionsWidget();
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.category),
-                  label: 'Categories & Filters',
+                  label: 'Filters',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.receipt_long),

@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 Color colorHexToArgb(String hexColor) {
@@ -22,4 +23,12 @@ Color calcForegroundColor(Color color, [int alpha = -1]) {
   }
 
   return Color.fromARGB(alpha, d, d, d);
+}
+
+getRandomChoice(List it) {
+  if (it.isEmpty) {
+    return null;
+  }
+  DateTime now = DateTime.now();
+  return it[now.day % it.length];
 }

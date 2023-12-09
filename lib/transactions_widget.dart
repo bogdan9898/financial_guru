@@ -1,4 +1,6 @@
 import 'package:financial_guru/global_app_state.dart';
+import 'package:financial_guru/transactions_widget_add.dart';
+import 'package:financial_guru/transactions_widget_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,16 +10,26 @@ class TransactionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("transactions wip..."),
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-      //   foregroundColor: Theme.of(context).colorScheme.onPrimary,
-      //   onPressed: () {
-      //     print("adding transaction...");
-      //   },
-      //   tooltip: 'New transaction',
-      //   child: const Icon(Icons.add),
-      // ),
+      child: ListView(
+        children: <Widget>[
+          AddTransactionsWidget(),
+          // separator widget ???
+          ListTransactionsWidget(),
+        ],
+      ),
     );
+
+    // return Center(
+    //   child: Text("transactions wip..."),
+    //   // floatingActionButton: FloatingActionButton(
+    //   //   backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+    //   //   foregroundColor: Theme.of(context).colorScheme.onPrimary,
+    //   //   onPressed: () {
+    //   //     print("adding transaction...");
+    //   //   },
+    //   //   tooltip: 'New transaction',
+    //   //   child: const Icon(Icons.add),
+    //   // ),
+    // );
   }
 }

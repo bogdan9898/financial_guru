@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class GlobalAppState extends ChangeNotifier {
-  var categories = [
+  var tags = [
     {'name': 'chirie', 'color': '#5E8B96'},
-    {'name': 'eon', 'color': '#7A088E'},
+    {'name': 'gaz', 'color': '#7A088E'},
+    {'name': 'curent electric', 'color': '#FFEB3B'},
     {'name': 'intretinere', 'color': '#721E1A'},
     {'name': 'digi', 'color': '#68FEE6'},
     {'name': 'yoxo', 'color': '#993778'},

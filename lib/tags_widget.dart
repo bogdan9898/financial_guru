@@ -3,17 +3,17 @@ import 'package:financial_guru/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class CategoriesWidget extends StatelessWidget {
-  const CategoriesWidget({super.key});
+class TagsWidget extends StatelessWidget {
+  const TagsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     var globalState = context.watch<GlobalAppState>();
-    var categories = globalState.categories;
+    var tags = globalState.tags;
 
     var grid = <Widget>[];
-    for (var categ in categories) {
-      Color color = colorHexToArgb(categ["color"]!);
+    for (var tag in tags) {
+      Color color = colorHexToArgb(tag["color"]!);
       grid.add(
         Container(
           decoration: BoxDecoration(
@@ -29,7 +29,7 @@ class CategoriesWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              categ["name"]!,
+              tag["name"]!,
               style: TextStyle(
                 color: calcForegroundColor(color, 235),
               ),
@@ -77,7 +77,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
             color: Theme.of(context).colorScheme.surfaceVariant,
             child: Text(
-              'Categories',
+              'Tags',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),

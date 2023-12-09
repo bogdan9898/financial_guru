@@ -36,6 +36,7 @@ dependencies:
     cupertino_icons: ^1.0.2
     provider: ^6.1.1
     google_fonts: ^6.1.0
+    flutter_month_picker: ^0.0.2
 
 dev_dependencies:
     flutter_test:
@@ -88,3 +89,6 @@ flutter:
     #
     # For details regarding fonts from package dependencies,
     # see https://flutter.dev/custom-fonts/#from-packages
+
+assets:
+    - google_fonts/
