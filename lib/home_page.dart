@@ -1,6 +1,6 @@
-import 'package:financial_guru/filters_widget.dart';
-import 'package:financial_guru/overview_widget.dart';
-import 'package:financial_guru/transactions_widget.dart';
+import 'package:financial_guru/widgets/filters_widget.dart';
+import 'package:financial_guru/widgets/overview_widget.dart';
+import 'package:financial_guru/widgets/transactions_widget.dart';
 import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 

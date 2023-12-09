@@ -1,4 +1,4 @@
-import 'package:financial_guru/tags_widget.dart';
+import 'package:financial_guru/widgets/filters__tags__widget.dart';
 import 'package:financial_guru/global_app_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,6 +1,6 @@
 import 'package:financial_guru/global_app_state.dart';
-import 'package:financial_guru/transactions_widget_add.dart';
-import 'package:financial_guru/transactions_widget_list.dart';
+import 'package:financial_guru/widgets/transactions__add__widget.dart';
+import 'package:financial_guru/widgets/transactions__list__widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
