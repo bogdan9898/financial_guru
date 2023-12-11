@@ -1,6 +1,6 @@
 import 'package:financial_guru/global_app_state.dart';
 import 'package:financial_guru/widgets/transactions__add__widget.dart';
-import 'package:financial_guru/widgets/transactions__list__widget.dart';
+import 'package:financial_guru/widgets/transactions__show__widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,7 @@ class TransactionsWidget extends StatelessWidget {
         children: <Widget>[
           AddTransactionsWidget(),
           // separator widget ???
-          ListTransactionsWidget(),
+          ShowTransactionsWidget(),
         ],
       ),
     );

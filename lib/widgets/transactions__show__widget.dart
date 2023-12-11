@@ -21,18 +21,18 @@ const List<String> months = <String>[
 const int firstYear = 2023;
 const int lastYear = 2100;
 
-class ListTransactionsWidget extends StatefulWidget {
-  const ListTransactionsWidget({super.key});
+class ShowTransactionsWidget extends StatefulWidget {
+  const ShowTransactionsWidget({super.key});
 
   @override
-  State<ListTransactionsWidget> createState() => _ListTransactionsWidgetState();
+  State<ShowTransactionsWidget> createState() => _ShowTransactionsWidgetState();
 }
 
-class _ListTransactionsWidgetState extends State<ListTransactionsWidget> {
+class _ShowTransactionsWidgetState extends State<ShowTransactionsWidget> {
   late String selectedYear;
   late String selectedMonth;
 
-  _ListTransactionsWidgetState() {
+  _ShowTransactionsWidgetState() {
     DateTime now = DateTime.now();
     selectedYear = now.year.toString();
     selectedMonth = months[now.month - 1];

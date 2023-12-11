@@ -1,0 +1,72 @@
+// https://dbdiagram.io/d
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table transactions {
+  id integer [primary key]
+  date datetime [note: 'Transactino date', not null]
+  type enum [note: '+/-', not null]
+  value float [note: 'Amount spent/gained', not null]
+  details varchar [note: 'Details about transaction such as: number of card used for transaction, who received the money etc', not null]
+  tag_id int [not null]
+}
+
+Table tags [note: 'tags = ["chirie", "eon", "intretinere", "digi", "yoxo", "salubritate", "shopping", "benzina", "reparatii", "rca/impozite", "car others", "steam", "iesiri in oras", "mancat in oras", "concerte", "vacante", "donations", "others"]'] {
+  id integer [primary key]
+  name varchar [note: 'Name to be displayed', not null]
+}
+
+Table categories [note: 'categories = [
+  {
+    "name": "locuinta",
+    "details": "Chirie+Facturi",
+    "tags": ["chirie", "eon", "intretinere", "digi", "yoxo", "salubritate"]
+  },
+  {
+    "name": "cumparaturi",
+    "details": "mancare/necesitati",
+    "tags": ["shopping"]
+  },
+  {
+    "name": "car",
+    "details": "Car stuff",
+    "tags": ["benzina", "intretinere", "reparatii", "rca/impozite"]
+  },
+  {
+    "name": "entertainment",
+    "details": "Stuff for keeping your mental sanity",
+    "tags": ["steam", "iesiri in oras/filme/concerte/mancat in oras", "im a materialistic POS"]
+  },
+  {
+    "name": "others",
+    "deatails": "Unknown or other stuff",
+    "tags": ["donations", "others"]
+  }
+]'] {
+  id integer [primary key]
+  name varchar [note: 'Name to be displayed', not null]
+}
+
+Table filters [note: 'filters = [["*"], ["locuinta"], ["car", "cumparaturi"], etc.]'] {
+  id integer [primary key]
+  name varchar [note: 'Name is optional']
+}
+
+Table tags_to_categories {
+  tag_id integer [primary key]
+  category_id integer [primary key]
+}
+
+Table categories_to_filters {
+  category_id integer [primary key]
+  filter_id integer [primary key]
+}
+
+Ref: transactions.tag_id > tags.id
+
+Ref: tags.id < tags_to_categories.tag_id
+Ref: tags_to_categories.category_id > categories.id
+
+Ref: categories.id < categories_to_filters.category_id
+Ref: categories_to_filters.filter_id > filters.id
+
